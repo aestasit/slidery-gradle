@@ -18,5 +18,3 @@ task('presentation', type: Slidedown) {
   destination "$buildDir/presentation/slides.html"        
   format 'reveal-js-base'
 }
-
-apply plugin: 'slidedown'
