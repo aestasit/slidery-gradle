@@ -20,9 +20,11 @@ class SlidedownTest {
 
       apply plugin: 'slidedown'
 
-      task('presentation', type: Slidedown) {
-        include "src/test/resources/*.md"
-        outputFile "$buildDir/presentation/slides.html"        
+      task('presentation', type: Slidedown) {        
+        source fileTree("$currentDir/src/test/resources") { 
+          include "*.md" 
+        } 
+        destination "$currentDir/tmp/presentation/slides.html"        
         format 'reveal-js-base'
       }
 
