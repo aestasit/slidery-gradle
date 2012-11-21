@@ -1,5 +1,5 @@
 
-apply plugin: 'slidedown'
+import com.aestasit.markdown.slidedown.gradle.Slidedown
 
 buildscript {
   repositories {
@@ -19,3 +19,4 @@ task('presentation', type: Slidedown) {
   format 'reveal-js-base'
 }
 
+apply plugin: 'slidedown'
