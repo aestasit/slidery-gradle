@@ -38,7 +38,6 @@ public class Slidedown extends SourceTask {
   private Configuration buildConfiguration() {
     SimpleConfiguration config = new SimpleConfiguration()
     def files = source.files.sort { it.name }
-    println files
     for (File file : files) {
       config.inputFile(file)
     }
