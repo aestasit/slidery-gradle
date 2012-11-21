@@ -1,3 +1,11 @@
+#############
+## Gradle
+#############
+
+.gradle
+build
+gradle.properties
+
 #################
 ## Eclipse
 #################

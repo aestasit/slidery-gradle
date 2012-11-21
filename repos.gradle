@@ -1,0 +1,51 @@
+apply plugin: 'maven'
+
+repositories {
+  mavenCentral()
+  maven {
+    url repositoryUrl
+  }
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+
+      name = "Sonatype OSS Snapshots"
+
+      repository(url: repositoryUrl) {
+        authentication(userName: repositoryUsername, password: repositoryPassword)
+      }
+
+      pom.project {
+
+        name 'Gradle Slidedown'
+        packaging 'jar'
+        description 'Gradle plugin for Slidedown - a Java library to support creation of presentation slides written in Markdown.'
+        url 'https://github.com/aestasit/slidedown'
+    
+        scm {
+          url 'scm:git@github.com:aestasit/slidedown-gradle'
+          connection 'scm:git@github.com:aestasit/slidedown-gradle'
+          developerConnection 'scm:git@github.com:aestasit/slidedown-gradle'
+        }
+    
+        licenses {
+          license {
+            name 'The Apache Software License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+            distribution 'repo'
+          }
+        }
+    
+        developers {
+          developer {
+            id 'aadamovich'
+            name 'Andrey Adamovich'
+          }
+        }
+
+      }
+    }
+  }
+}
