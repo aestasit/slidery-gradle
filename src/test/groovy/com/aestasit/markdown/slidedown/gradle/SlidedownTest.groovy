@@ -5,7 +5,7 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.junit.BeforeClass
 import org.junit.Test
 
-public class SlidedownDslTest {
+public class SlidedownTest {
 
   static Project project
 
@@ -16,9 +16,9 @@ public class SlidedownDslTest {
 
       apply plugin: 'slidedown'
 
-
-      task('convert') << {
-        println ">>> Starting task: convert"
+      task('presentation', type: Slidedown) {
+        outputFile "$buildDir/"        
+        format 'reveal.js'
       }
 
     }
