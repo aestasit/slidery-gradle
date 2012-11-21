@@ -5,7 +5,11 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.junit.BeforeClass
 import org.junit.Test
 
-public class SlidedownTest {
+/**
+ * @author Andrey Adamovich
+ *
+ */
+class SlidedownTest {
 
   static Project project
 
@@ -17,8 +21,9 @@ public class SlidedownTest {
       apply plugin: 'slidedown'
 
       task('presentation', type: Slidedown) {
-        outputFile "$buildDir/"        
-        format 'reveal.js'
+        include "src/test/resources/*.md"
+        outputFile "$buildDir/presentation/slides.html"        
+        format 'reveal-js-base'
       }
 
     }
@@ -26,7 +31,7 @@ public class SlidedownTest {
 
   @Test
   public void testSetup() {
-    project.tasks.'convert'.execute()
+    project.tasks.'presentation'.execute()
     assert project != null
   }
 
