@@ -7,7 +7,7 @@ buildscript {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
   }
   dependencies {
-    classpath 'com.aestasit.markdown:slidedown-gradle:0.1-SNAPSHOT'
+    classpath 'com.aestasit.markdown:slidedown-gradle:0.2-SNAPSHOT'
   }
 }
 
@@ -16,5 +16,5 @@ task('presentation', type: Slidedown) {
     include "*.md" 
   } 
   destination "$buildDir/presentation/slides.html"        
-  format 'reveal-js-base'
+  format 'deck-js'
 }

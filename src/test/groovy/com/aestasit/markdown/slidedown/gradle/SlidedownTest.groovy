@@ -25,7 +25,7 @@ class SlidedownTest {
           include "*.md" 
         } 
         destination "$currentDir/tmp/presentation/slides.html"        
-        format 'reveal-js-base'
+        format 'reveal-js'
       }
 
     }
