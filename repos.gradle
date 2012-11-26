@@ -19,15 +19,15 @@ uploadArchives {
 
       pom.project {
 
-        name 'Gradle Slidedown'
+        name 'Gradle Slidery'
         packaging 'jar'
-        description 'Gradle plugin for Slidedown - a Java library to support creation of presentation slides written in Markdown.'
-        url 'https://github.com/aestasit/slidedown'
+        description 'Gradle plugin for Slidery - a Java library to support creation of presentation slides written in Markdown.'
+        url 'https://github.com/aestasit/slidery-gradle'
     
         scm {
-          url 'scm:git@github.com:aestasit/slidedown-gradle'
-          connection 'scm:git@github.com:aestasit/slidedown-gradle'
-          developerConnection 'scm:git@github.com:aestasit/slidedown-gradle'
+          url 'scm:git@github.com:aestasit/slidery-gradle'
+          connection 'scm:git@github.com:aestasit/slidery-gradle'
+          developerConnection 'scm:git@github.com:aestasit/slidery-gradle'
         }
     
         licenses {

@@ -1,5 +1,5 @@
 
-import com.aestasit.markdown.slidedown.gradle.Slidedown
+import com.aestasit.markdown.slidery.gradle.Slidery
 
 buildscript {
   repositories {
@@ -7,11 +7,11 @@ buildscript {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
   }
   dependencies {
-    classpath 'com.aestasit.markdown:slidedown-gradle:0.2-SNAPSHOT'
+    classpath 'com.aestasit.markdown:slidery-gradle:0.2-SNAPSHOT'
   }
 }
 
-task('presentation', type: Slidedown) {        
+task('presentation', type: Slidery) {        
   source fileTree("$projectDir/slides") { 
     include "*.md" 
   } 

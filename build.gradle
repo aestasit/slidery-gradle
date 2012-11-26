@@ -9,6 +9,6 @@ group = 'com.aestasit.markdown'
 
 dependencies {
   compile gradleApi()
-  compile 'com.aestasit.markdown:slidedown:0.2-SNAPSHOT'
+  compile 'com.aestasit.markdown:slidery:0.2-SNAPSHOT'
   groovy localGroovy()
 }

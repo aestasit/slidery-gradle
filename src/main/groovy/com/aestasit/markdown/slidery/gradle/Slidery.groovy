@@ -1,4 +1,4 @@
-package com.aestasit.markdown.slidedown.gradle
+package com.aestasit.markdown.slidery.gradle
 
 import org.gradle.api.file.FileTree
 import org.gradle.api.tasks.Input
@@ -6,15 +6,15 @@ import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceTask
 import org.gradle.api.tasks.TaskAction
 
-import com.aestasit.markdown.slidedown.converters.Configuration
-import com.aestasit.markdown.slidedown.converters.ConverterFactory
-import com.aestasit.markdown.slidedown.converters.SimpleConfiguration
+import com.aestasit.markdown.slidery.converters.Configuration
+import com.aestasit.markdown.slidery.converters.ConverterFactory
+import com.aestasit.markdown.slidery.converters.SimpleConfiguration
 
 /**
  * @author Andrey Adamovich
  *
  */
-public class Slidedown extends SourceTask {
+public class Slidery extends SourceTask {
 
   @Input
   String format

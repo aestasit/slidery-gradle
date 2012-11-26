@@ -1,15 +1,17 @@
-package com.aestasit.markdown.slidedown.gradle
+package com.aestasit.markdown.slidery.gradle
 
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.BeforeClass
 import org.junit.Test
 
+import com.aestasit.markdown.slidery.gradle.Slidery;
+
 /**
  * @author Andrey Adamovich
  *
  */
-class SlidedownTest {
+class SlideryTest {
 
   static Project project
 
@@ -18,9 +20,9 @@ class SlidedownTest {
     project = ProjectBuilder.builder().build()
     project.with {
 
-      apply plugin: 'slidedown'
+      apply plugin: 'slidery'
 
-      task('presentation', type: Slidedown) {        
+      task('presentation', type: Slidery) {        
         source fileTree("$currentDir/src/test/resources") { 
           include "*.md" 
         } 

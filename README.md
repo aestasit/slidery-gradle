@@ -1,10 +1,9 @@
-slidedown-gradle
+Introduction
 ================
 
-slidedown-gradle is a Gradle plugin for Slidedown - Java library to support creation of presentation slides written in Markdown.
+slidery-gradle is a Gradle plugin for Slidery - Java library to support creation of presentation slides written in Markdown.
 
 # Getting started
-
 
 
 
