@@ -59,27 +59,14 @@ public class Slidery extends ConventionTask {
 
   @InputFiles
   def FileCollection getInputFiles() {
-    return project.files(config.getInputFiles())
-  }
-
-  @InputFiles
-  @SkipWhenEmpty
-  public FileCollection getStaticFiles() {
-    return project.files(config.getStaticFiles().values())
-  }
-
-  @InputFile
-  @Optional
-  @SkipWhenEmpty
-  public File getTemplateFile() {
-    return config.getTemplateFile()
-  }
-
-  @InputFile
-  @Optional
-  @SkipWhenEmpty
-  public File getLogoFile() {
-    return config.getLogo()
+    FileCollection inputFiles = project.files(config.getInputFiles()) + project.files(config.getStaticFiles().values())
+    if (config.logo) { 
+      inputFiles += project.files(config.logo)      
+    }
+    if (config.templateFile) {
+      inputFiles += project.files(config.templateFile)
+    }
+    return inputFiles
   }
 
   @OutputFile
