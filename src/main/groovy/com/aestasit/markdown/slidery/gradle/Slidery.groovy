@@ -65,7 +65,7 @@ public class Slidery extends ConventionTask {
   @InputFiles
   @SkipWhenEmpty
   public FileCollection getStaticFiles() {
-    return project.files(config.getStaticFiles())
+    return project.files(config.getStaticFiles().values())
   }
 
   @InputFile
