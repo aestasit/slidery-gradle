@@ -22,11 +22,11 @@ class SlideryTest {
 
       apply plugin: 'slidery'
 
-      task('presentation', type: Slidery) {        
-        source fileTree("$currentDir/src/test/resources") { 
+      task('presentation', type: Slidery) {
+        inputFiles fileTree("$currentDir/src/test/resources") { 
           include "*.md" 
-        } 
-        destination "$currentDir/tmp/presentation/slides.html"        
+        }  
+        outputFile "$currentDir/tmp/presentation/slides.html"        
         format 'reveal-js'
       }
 

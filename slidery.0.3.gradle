@@ -1,0 +1,20 @@
+
+import com.aestasit.markdown.slidery.gradle.Slidery
+
+buildscript {
+  repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+  }
+  dependencies {
+    classpath 'com.aestasit.markdown:slidery-gradle:0.3-SNAPSHOT'
+  }
+}
+
+task('presentation', type: Slidery) {        
+  intputFiles fileTree("$projectDir/slides") { 
+    include "*.md" 
+  } 
+  outputFile "$buildDir/presentation/slides.html"        
+  format 'deck-js'
+}
