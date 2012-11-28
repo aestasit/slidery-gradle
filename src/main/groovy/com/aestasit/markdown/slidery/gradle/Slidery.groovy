@@ -50,7 +50,7 @@ public class Slidery extends ConventionTask {
   
   @Input boolean splitOutput = false
   @Input boolean incrementLists = true
-  @Input boolean includeNodes = true
+  @Input boolean includeNotes = true
   
   @Input @Optional String author
   @Input @Optional String company
