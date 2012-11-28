@@ -37,7 +37,7 @@ public class Slidery extends ConventionTask {
           .description(description)
           .currentDate()
           .splitOutput(splitOutput)
-          .includeNotes(includeNodes)
+          .includeNotes(includeNotes)
           .incrementalLists(incrementLists)
           .theme(theme)
           .encoding(inputEncoding)
