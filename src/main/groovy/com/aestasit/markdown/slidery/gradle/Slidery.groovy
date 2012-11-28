@@ -158,4 +158,16 @@ public class Slidery extends ConventionTask {
     return config.logo(logoFile)
   }
 
+  def option(String name, Object value) {    
+    return config.option(name, value?.toString())
+  }
+
+  def option(String name, boolean value) {
+    return config.option(name, value.toString())
+  }
+
+  def option(String name, String value) {
+    return config.option(name, value)
+  }
+  
 }

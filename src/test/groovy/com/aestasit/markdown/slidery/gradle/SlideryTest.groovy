@@ -26,7 +26,8 @@ class SlideryTest {
         inputFiles fileTree("$currentDir/src/test/resources") { 
           include "*.md" 
         }  
-        outputFile "$currentDir/tmp/presentation/slides.html"        
+        outputFile "$currentDir/tmp/presentation/slides.html"
+        option "renderSyntaxHighlighting", true
         format 'reveal-js'
       }
 
