@@ -11,9 +11,9 @@ import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SkipWhenEmpty
 import org.gradle.api.tasks.TaskAction
 
-import com.aestasit.markdown.slidery.converters.Configuration
+import com.aestasit.markdown.slidery.configuration.ConfigurationBuilder;
+import com.aestasit.markdown.slidery.configuration.SimpleConfiguration;
 import com.aestasit.markdown.slidery.converters.ConverterFactory
-import com.aestasit.markdown.slidery.converters.SimpleConfiguration
 
 /**
  * Gradle task that calls Slidery converter based on the configuration.
@@ -23,14 +23,14 @@ import com.aestasit.markdown.slidery.converters.SimpleConfiguration
  */
 public class Slidery extends ConventionTask {
 
-  private Configuration config = new SimpleConfiguration()
+  private ConfigurationBuilder config = new SimpleConfiguration()
   
   @TaskAction
   void doTransform() throws IOException {
     ConverterFactory.createConverter(format).render(buildConfiguration())
   }
 
-  private Configuration buildConfiguration() {
+  private ConfigurationBuilder buildConfiguration() {
     config.author(author)
           .company(company)
           .title(title)
