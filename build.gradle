@@ -1,14 +1,42 @@
 
+buildscript {
+  repositories { mavenCentral() }
+  dependencies { classpath 'net.saliman:gradle-cobertura-plugin:2.0.0' }
+  dependencies { classpath 'org.ajoberstar:gradle-git:0.6.3' }
+}
+
 apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'cobertura'
+apply plugin: 'github-pages'
 
 apply from: 'repos.gradle'
+apply from: 'sonar.gradle'
+apply from: 'docs.gradle'
 
-version = '0.4-SNAPSHOT'
 group = 'com.aestasit.markdown'
+version = '0.4-SNAPSHOT'
+
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
 
 dependencies {
   compile localGroovy()
   compile gradleApi()
   compile 'com.aestasit.markdown:slidery:0.4-SNAPSHOT'
+  testCompile 'junit:junit:4.+'
+  testRuntime 'ch.qos.logback:logback-core:1.0.7'
+  testRuntime 'ch.qos.logback:logback-classic:1.0.7'
+}
+
+configurations {
+  all*.exclude group: 'commons-logging'
+  all*.exclude group: 'log4j'
+  all*.exclude module: 'slf4j-simple'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.8'
 }
