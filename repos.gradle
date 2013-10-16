@@ -2,47 +2,36 @@ apply plugin: 'maven'
 
 repositories {
   mavenCentral()
-  maven {
-    url repositoryUrl
-  }
+  maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 uploadArchives {
-  repositories {
-    mavenDeployer {
-
-      name = "Sonatype OSS Snapshots"
-
-      repository(url: repositoryUrl) {
-        authentication(userName: repositoryUsername, password: repositoryPassword)
+  repositories.mavenDeployer {
+    name = "snapshots" 
+    repository(url: ossSnapshotRepositoryUrl) {
+      authentication(userName: ossSnapshotRepositoryUserName, password: ossSnapshotRepositoryPassword)
+    }
+    pom.project {
+      name pomProjectTitle
+      packaging 'jar'
+      description pomProjectDescription
+      url "https://github.com/aestasit/${githubProjectName}"
+      scm {
+        url "scm:git@github.com:aestasit/${githubProjectName}.git"
+        connection "scm:git@github.com:aestasit/${githubProjectName}.git"
+        developerConnection "scm:git@github.com:aestasit/${githubProjectName}.git"
       }
-
-      pom.project {
-
-        name 'Gradle Slidery'
-        packaging 'jar'
-        description 'Gradle plugin for Slidery - a Java library to support creation of presentation slides written in Markdown.'
-        url 'https://github.com/aestasit/slidery-gradle'
-    
-        scm {
-          url 'scm:git@github.com:aestasit/slidery-gradle'
-          connection 'scm:git@github.com:aestasit/slidery-gradle'
-          developerConnection 'scm:git@github.com:aestasit/slidery-gradle'
+      licenses {
+        license {
+          name 'The Apache Software License, Version 2.0'
+          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          distribution 'repo'
         }
-    
-        licenses {
-          license {
-            name 'The Apache Software License, Version 2.0'
-            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-            distribution 'repo'
-          }
-        }
-    
-        developers {
-          developer {
-            id 'aadamovich'
-            name 'Andrey Adamovich'
-          }
+      }
+      developers {
+        developer {
+          id 'aadamovich'
+          name 'Andrey Adamovich'
         }
 
       }
