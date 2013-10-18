@@ -26,7 +26,7 @@ dependencies {
   compile localGroovy()
   compile gradleApi()
   compile 'com.aestasit.markdown:slidery:0.4-SNAPSHOT'
-  testCompile 'junit:junit:4.+'
+  testCompile 'junit:junit:4.11'
   testRuntime 'ch.qos.logback:logback-core:1.0.7'
   testRuntime 'ch.qos.logback:logback-classic:1.0.7'
 }
