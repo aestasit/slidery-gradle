@@ -20,15 +20,14 @@ import org.gradle.api.file.FileCollection
 import org.gradle.api.file.FileTree
 import org.gradle.api.internal.ConventionTask
 import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputFile
-import org.gradle.api.tasks.SkipWhenEmpty
 import org.gradle.api.tasks.TaskAction
 
-import com.aestasit.markdown.slidery.configuration.ConfigurationBuilder;
-import com.aestasit.markdown.slidery.configuration.SimpleConfiguration;
+import com.aestasit.markdown.slidery.configuration.Configuration
+import com.aestasit.markdown.slidery.configuration.ConfigurationBuilder
+import com.aestasit.markdown.slidery.configuration.SimpleConfiguration
 import com.aestasit.markdown.slidery.converters.ConverterFactory
 
 /**
@@ -39,7 +38,7 @@ import com.aestasit.markdown.slidery.converters.ConverterFactory
  */
 public class Slidery extends ConventionTask {
 
-  private ConfigurationBuilder config = new SimpleConfiguration()
+  private Configuration config = new SimpleConfiguration()
   
   @TaskAction
   void doTransform() throws IOException {
