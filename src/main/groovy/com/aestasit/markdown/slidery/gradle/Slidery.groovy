@@ -54,6 +54,7 @@ public class Slidery extends ConventionTask {
           .currentDate()
           .splitOutput(splitOutput)
           .includeNotes(includeNotes)
+          .stripHtml(stripHtml)
           .incrementalLists(incrementLists)
           .theme(theme)
           .encoding(inputEncoding)
@@ -67,6 +68,7 @@ public class Slidery extends ConventionTask {
   @Input boolean splitOutput = false
   @Input boolean incrementLists = true
   @Input boolean includeNotes = true
+  @Input boolean stripHtml = true
   
   @Input @Optional String author
   @Input @Optional String company
