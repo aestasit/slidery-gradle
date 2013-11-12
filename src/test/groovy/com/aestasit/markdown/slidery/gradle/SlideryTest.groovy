@@ -45,6 +45,7 @@ class SlideryTest {
         outputFile "$currentDir/tmp/presentation/slides.html"
         option "renderSyntaxHighlighting", true
         format 'reveal-js'
+        stripHtml false
       }
 
     }

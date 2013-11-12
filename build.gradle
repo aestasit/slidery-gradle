@@ -1,6 +1,6 @@
 
 group = 'com.aestasit.publishing.slidery'
-version = '0.4-SNAPSHOT'
+version = '0.4.1-SNAPSHOT'
 
 buildscript {
   repositories { mavenCentral() }
