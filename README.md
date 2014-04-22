@@ -7,8 +7,3 @@ slidery-gradle is a Gradle plugin for Slidery - Java library to support creation
 
 
 
-#
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/aestasit/slidery-gradle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
