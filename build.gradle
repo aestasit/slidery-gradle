@@ -23,12 +23,15 @@ sourceCompatibility = '1.6'
 targetCompatibility = '1.6'
 
 dependencies {
-  compile localGroovy()
   compile gradleApi()
-  compile 'com.aestasit.publishing.slidery:slidery:0.4-SNAPSHOT'
+  compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+  compile "org.slf4j:slf4j-api:${slf4jVersion}"
+  compile "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+  compile ('com.aestasit.publishing.slidery:slidery:0.4-SNAPSHOT') {
+    exclude module: 'groovy-templates'
+  }
   testCompile 'junit:junit:4.11'
-  testRuntime 'ch.qos.logback:logback-core:1.1.2'
-  testRuntime 'ch.qos.logback:logback-classic:1.1.2'
+  testRuntime "ch.qos.logback:logback-classic:${logbackVersion}"
 }
 
 configurations {
